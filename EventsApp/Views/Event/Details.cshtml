@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@using EventsApp.Models.Event
+@model EventViewModel
+
+<form method="post">
+    <!-- Name input -->
+    <div class="form-outline mb-4">
+        <input asp-for="Title" type="text" id="form4Example1" class="form-control" disabled value="@Model.Title" />
+        <label asp-for="Title" class="form-label" for="form4Example1">Title</label>
+    </div>
+
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input asp-for="ImgName" type="text" id="form4Example2" class="form-control" disabled value="@Model.ImgName" />
+        <label asp-for="ImgName" class="form-label" for="form4Example2">Image Name </label>
+    </div>
+
+    <div class="form-outline mb-4">
+        <input asp-for="ImgPath" type="text" id="form4Example2" class="form-control" disabled value="@Model.ImgPath" />
+        <label asp-for="ImgPath" class="form-label" for="form4Example2">Image Path</label>
+    </div>
+
+    <div class="form-outline mb-4">
+        <input asp-for="StartDate" type="datetime" id="form4Example2" class="form-control" disabled value="@Model.StartDate" />
+        <label asp-for="StartDate" class="form-label" for="form4Example2">Start Date</label>
+    </div>
+
+    <div class="form-outline mb-4">
+        <input asp-for="EndDate" type="datetime" id="form4Example2" class="form-control" disabled value="@Model.EndDate" />
+        <label asp-for="EndDate" class="form-label" for="form4Example2">End Date</label>
+    </div>
+
+    <!-- Message input -->
+    <div class="form-outline mb-4">
+        <textarea asp-for="Description" class="form-control" id="form4Example3" rows="4" disabled aria-valuetext="@Model.Description"></textarea>
+        <label asp-for="Description" class="form-label" for="form4Example3">Description</label>
+    </div>
+
+    <h3>Attendants:</h3>
+    <ul class="list-group">
+        @if (Model.Users != null)
+        {
+            @foreach (var attendant in Model.Users)
+            {
+                <li class="list-group-item">@attendant.Name @attendant.LastName</li>
+            }
+        }
+
+    </ul>
+
+</form>

@@ -1,0 +1,17 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@using AcademyApp.Models.Event
+@model EndDateViewModel
+
+<form method="post">
+   
+    <div class="form-outline mb-4">
+        <input asp-for="Date" type="datetime" id="form4Example2" class="form-control" />
+        <label asp-for="Date" class="form-label" for="form4Example2">Edit End Date</label>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Set</button>
+</form>

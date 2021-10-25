@@ -1,0 +1,46 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@using EventsApp.Models.Event.Requests
+@model UpdateRequest
+
+<form method="post">
+    <!-- Name input -->
+    <div class="form-outline mb-4">
+        <input asp-for="Title" type="text" id="form4Example1" class="form-control" value="@Model.Title" />
+        <label asp-for="Title" class="form-label" for="form4Example1">Title</label>
+    </div>
+    <span asp-validation-for="Title" class="text-danger"></span>
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input asp-for="ImgName" type="text" id="form4Example2" class="form-control" value="@Model.ImgName" />
+        <label asp-for="ImgName" class="form-label" for="form4Example2">Image Name </label>
+    </div>
+    <span asp-validation-for="ImgName" class="text-danger"></span>
+    <div class="form-outline mb-4">
+        <input asp-for="ImgPath" type="text" id="form4Example2" class="form-control" value="@Model.ImgPath" />
+        <label asp-for="ImgPath" class="form-label" for="form4Example2">Image Path</label>
+    </div>
+    <span asp-validation-for="ImgPath" class="text-danger"></span>
+    <div class="form-outline mb-4">
+        <input asp-for="StartDate" type="datetime" id="form4Example2" class="form-control" data-provide="datepicker" value="@Model.StartDate" />
+        <label asp-for="StartDate" class="form-label" for="form4Example2">Start Date</label>
+    </div>
+    <span asp-validation-for="StartDate" class="text-danger"></span>
+    <div class="form-outline mb-4">
+        <input asp-for="EndDate" type="datetime" id="form4Example2" class="form-control" value="@Model.EndDate" />
+        <label asp-for="EndDate" class="form-label" for="form4Example2">End Date</label>
+    </div>
+    <span asp-validation-for="EndDate" class="text-danger"></span>
+    <!-- Message input -->
+    <div class="form-outline mb-4">
+        <textarea asp-for="Description" class="form-control" id="form4Example3" rows="4" aria-valuetext="@Model.Description"></textarea>
+        <label asp-for="Description" class="form-label" for="form4Example3">Description</label>
+    </div>
+    <span asp-validation-for="Description" class="text-danger"></span>
+
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Update</button>
+</form>

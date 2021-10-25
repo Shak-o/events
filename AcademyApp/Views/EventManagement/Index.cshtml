@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "_Layout";
+}
+@using AcademyApp.Models.Account
+@model List<AcademyApp.Models.Event.EventViewModel>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Author</th>
+        <th scope="col">IsActive</th>
+        <th scope="col">EditEndDate</th>
+        <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th scope="row">@item.Id</th>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>@item.User.Name @item.User.LastName</td>
+            <td>@item.EditEndDate</td>
+            <td>@item.IsActive</td>
+           
+            <td>
+                <button class="btn btn-light px-4 ms-3" style="text-decoration: none"> @Html.ActionLink("SetEndDate", "SetEndDate", "EventManagement", new {item.Id})</button>
+                <button class="btn btn-light px-4 ms-3" style="text-decoration: none"> @Html.ActionLink("Publish", "SetPublished", "EventManagement", new {item.Id})</button>
+            </td>
+        </tr>
+    }
+   
+    </tbody>
+</table>
+
+<div class="col-md-6">
+    <a asp-controller="Account" asp-action="Logout">
+        <button type="submit" class="btn btn-primary">
+            Logout
+        </button>
+    </a>
+</div>

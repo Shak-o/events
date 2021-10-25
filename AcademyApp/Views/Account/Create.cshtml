@@ -1,0 +1,67 @@
+﻿@{
+    Layout = "_Layout";
+}
+@using AcademyApp.Models.Account
+@model RegistrationViewModel
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Register</div>
+                    <div class="card-body">
+                        <form name="my-form" method="post">
+                            <div class="form-group row">
+                                <label asp-for="Name" class="col-md-4 col-form-label text-md-right">Name</label>
+                                <div class="col-md-6">
+                                    <input asp-for="Name" type="text" id="full_name" class="form-control">
+                                </div>
+                            </div>
+                            <span asp-validation-for="Name"  class="text-danger"></span>
+                            <div class="form-group row">
+                                <label asp-for="LastName" class="col-md-4 col-form-label text-md-right">LastName</label>
+                                <div class="col-md-6">
+                                    <input asp-for="LastName" type="text" id="full_name" class="form-control">
+                                </div>
+                            </div>
+                            <span asp-validation-for="LastName"  class="text-danger"></span>
+
+                            <div class="form-group row">
+                                <label asp-for="Email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                                <div class="col-md-6">
+                                    <input asp-for="Email" type="text" id="email_address" class="form-control">
+                                </div>
+                            </div>
+                            <span asp-validation-for="Email"  class="text-danger"></span>
+
+                            <div class="form-group row">
+                                <label asp-for="UserName" class="col-md-4 col-form-label text-md-right">User Name</label>
+                                <div class="col-md-6">
+                                    <input asp-for="UserName" type="text" id="user_name" class="form-control">
+                                </div>
+                            </div>
+                            <span asp-validation-for="UserName"  class="text-danger"></span>
+
+                            <div class="form-group row">
+                                <label asp-for="Password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                <div class="col-md-6">
+                                    <input asp-for="Password" type="password" id="nid_number" class="form-control">
+                                </div>
+                            </div>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Register
+                                </button>
+                            </div>
+                          
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

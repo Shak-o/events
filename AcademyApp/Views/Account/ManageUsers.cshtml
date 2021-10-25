@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "_Layout";
+}
+@using AcademyApp.Models.Account
+@model List<UserManageViewModel>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Email</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th scope="row">@item.Id</th>
+            <td>@item.Name</td>
+            <td>@item.LastName</td>
+            <td>@item.Email</td>
+            <td>@item.UserName</td>
+           
+            <td>
+                <button class="btn btn-light px-4 ms-3" style="text-decoration: none"> @Html.ActionLink("Delete", "DeleteUser", "Account", new {item.UserName})</button>
+                <button class="btn btn-light px-4 ms-3" style="text-decoration: none"> @Html.ActionLink("Update", "Edit", "Account", new {item.UserName})</button>
+            </td>
+        </tr>
+    }
+   
+    </tbody>
+</table>
+
+<div class="col-md-6">
+    <a asp-controller="Account" asp-action="Create">
+        <button type="submit" class="btn btn-primary">
+            Create
+        </button>
+    </a>
+    <a asp-controller="Account" asp-action="Logout">
+        <button type="submit" class="btn btn-primary">
+            Logout
+        </button>
+    </a>
+</div>

@@ -1,0 +1,46 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@using EventsApp.Models.Event.Requests 
+@model CreateRequest
+
+<form method="post">
+    <!-- Name input -->
+    <div class="form-outline mb-4">
+        <input asp-for="Title" type="text" id="form4Example1" class="form-control" />
+        <label asp-for="Title" class="form-label" for="form4Example1">Title</label>
+    </div>
+    <span asp-validation-for="Title" class="text-danger"></span>
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input asp-for="ImgName" type="text" id="form4Example2" class="form-control" />
+        <label asp-for="ImgName" class="form-label" for="form4Example2">Image Name</label>
+    </div>
+    <span asp-validation-for="ImgName" class="text-danger"></span>
+    <div class="form-outline mb-4">
+        <input asp-for="ImgPath" type="text" id="form4Example2" class="form-control" />
+        <label asp-for="ImgPath" class="form-label" for="form4Example2">Image Path</label>
+    </div>
+    <span asp-validation-for="ImgPath" class="text-danger"></span>
+    <div class="form-outline mb-4">
+        <input asp-for="StartDate" type="datetime" id="form4Example2" class="form-control" />
+        <label asp-for="StartDate" class="form-label" for="form4Example2">Start Date</label>
+    </div>
+    <span asp-validation-for="StartDate" class="text-danger"></span>
+    <div class="form-outline mb-4">
+        <input asp-for="EndDate" type="datetime" id="form4Example2" class="form-control" />
+        <label asp-for="EndDate" class="form-label" for="form4Example2">End Date</label>
+    </div>
+    <span asp-validation-for="EndDate" class="text-danger"></span>
+    <!-- Message input -->
+    <div class="form-outline mb-4">
+        <textarea asp-for="Description" class="form-control" id="form4Example3" rows="4"></textarea>
+        <label asp-for="Description" class="form-label" for="form4Example3">Description</label>
+    </div>
+
+    <span asp-validation-for="Description" class="text-danger"></span>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Create</button>
+</form>
